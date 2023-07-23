@@ -117,7 +117,7 @@ function buildCharts(sample) {
    mode: "gauge+number",
    gauge: {
      axis: {range: [0,10]},
-     bar: {color: "black"},
+     bar: {color: "blue"},
      bordercolor: "black",
      steps: [
         {range: [0, 2], color: "red"},
@@ -149,7 +149,8 @@ function buildCharts(sample) {
     mode: 'markers',
     marker: {
       size: sampleValue,
-      color: otuID
+      color: otuID,
+      colorscale: "Earth"
     }
   };
   
@@ -158,7 +159,11 @@ function buildCharts(sample) {
     xaxis: {title: "OTU ID"},
     showlegend: false,
     font: { color: "black"},
-    paper_bgcolor: "#FFFFFF57"
+    paper_bgcolor: "#FFFFFF57",
+    marker: {
+        size: sampleValue,
+        color: otuID
+      }
   };
   
   // Plot with plotly
